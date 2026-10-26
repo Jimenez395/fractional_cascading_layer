@@ -1,0 +1,14 @@
+[project]
+name = "fractional-cascading-layer"
+version = "0.1.0"
+description = "Fractional cascading list-pair layer that enables O(1) lookups between adjacent sorted lists"
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
