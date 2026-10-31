@@ -1,6 +1,6 @@
 [project]
 name = "fractional-cascading-layer"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fractional cascading list-pair layer that enables O(1) lookups between adjacent sorted lists"
 requires-python = ">=3.10"
 dependencies = []
