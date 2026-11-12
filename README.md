@@ -34,3 +34,10 @@ The trade-off here is simplicity over textbook fidelity: instead of materialisin
 - **Duplicates are rejected at construction.** Every position must have a unique owner, so duplicate keys raise `ValueError`. This is the one constraint a caller will trip over if they feed in raw, un-deduplicated data.
 - **Empty layers are supported**, including as the next layer: `locate_in_next` returns `found=False, position=0`.
 - The input sequence is **snapshotted and sorted** at construction; mutating the original afterwards has no effect.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
